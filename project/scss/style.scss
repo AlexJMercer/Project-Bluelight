@@ -1,0 +1,97 @@
+$colorBase: #3b5998;
+$colorMainFont: #1d2129;
+$colorFeaturedFont: #ffffff;
+$colorLinkFont: #365899;
+$colorMainHover: #dddfe2;
+$backgroundColor: #e9ebee;
+$borderColor:#ccc;
+$backgroundColorBoxes: #ffffff;
+$fontSize: 12px;
+$fontFamily: 'Open Sans',arial, sans-serif;
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: $backgroundColor;
+}
+
+.header{
+  height: 45px;
+  background-color: $colorBase;
+  border-bottom: 1px solid #29487d;
+}
+
+.content{
+  min-height: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainContent{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.mainContent > div{
+  display: flex;
+  margin: 10px;
+}
+
+[class*="box"]{
+  background-color: $backgroundColorBoxes;
+  border-radius: 3px;
+  border: 1px solid $borderColor;
+  margin: 0px 10px 10px 0;
+}
+
+.sideBar{
+  width: 200px;
+  border-left: 1px solid $borderColor;
+}
+
+.informationsAccount{width: 180px;}
+.feedNews{width: 500px;}
+.otherInformations{width: 310px;}
+.boxInitial{height: 150px;}
+.boxPublication{height: 500px;}
+.boxInfo{height: 370px;}
+.boxLanguages{height: 55px;}
+
+.infoGeneral{
+  font-size: $fontSize;
+  font-family: $fontFamily;
+  ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    h4{
+      margin: 15px 0 0;
+      font-weight: normal;
+      text-transform: uppercase;
+      color: #666;
+    }
+    li{
+      a{
+        width: 170px;
+        text-decoration: none;
+        display: inline-block;
+        padding: 5px;
+        border-radius: 3px;
+        color: $colorMainFont;
+        &:before{
+          content: "";
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 5px;
+          width: 16px;
+          height: 16px;
+          background-image: url('../image/defaultIcon.png');
+        }
+        &:hover{
+          background-color: $colorMainHover;
+        }
+      }
+    }
+  }
+}

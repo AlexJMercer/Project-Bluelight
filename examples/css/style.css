@@ -1,0 +1,30 @@
+body .container .artigo .titulo h1 {
+  font-size: 20px;
+}
+body .container .artigo .titulo h2 {
+  font-size: 15px;
+}
+body .container .artigo .conteudo {
+  background-color: #ccc;
+}
+body .container .artigo .conteudo .secaoPrincipal {
+  font-size: 14px;
+}
+body .container .artigo .conteudo .secaoPrincipal .redes {
+  padding: 10px;
+}
+body .container .artigo .conteudo .secaoPrincipal .redes nav {
+  padding-top: 40px;
+}
+body .container .artigo .conteudo .secaoPrincipal .redes nav ul {
+  margin: 0;
+}
+body .container .artigo .conteudo .secaoPrincipal .redes nav ul li {
+  display: inline;
+}
+body .container .artigo .conteudo .secaoPrincipal .redes nav ul li a {
+  text-decoration: none;
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
