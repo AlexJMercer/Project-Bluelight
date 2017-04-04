@@ -33,15 +33,24 @@ $colorRequired: #FF0000;
   }
 }
 
+@mixin titleCard($backgroundColorTitle) {
+  .card-titulo{
+    padding: 5px;
+    background: $backgroundColorTitle;
+    text-align: center;
+    h1{
+      color: white;
+      font-size: 40px;
+    }
+  }
+}
+
 .card{
   background: white;
   box-shadow: 0 5px 15px 0 rgba( 0, 0, 0, 0.25);
   width: 400px;
 
-  &-titulo{
-    padding: 5px;
-    color: white;
-  }
+  @include titleCard(#ff5000);
 
   &-conteudo{
     color: #777;
@@ -82,4 +91,115 @@ input[type="text"]{
   border: 1px solid #ccc {
     top-color: #0000ff;
   }
+}
+
+$corPrincipal: #3e4fb2;
+
+@mixin baseFont($weightFont, $letterSpacing:0.2px) {
+  letter-spacing: $letterSpacing;
+  font-family: Calibri;
+  font-weight: $weightFont;
+  line-height: 1.5;
+}
+
+p{
+  @include baseFont(400);
+  color: #808080;
+}
+
+input[type="button"]{
+  @include baseFont(600, 0.6px);
+  background: $corPrincipal;
+  border-radius: 0;
+  border-style: none;
+  width: 100%;
+  height: 45px;
+  color: white;
+  font-size: 18px;
+
+}
+
+.button{
+  border: none;
+  padding: 8px;
+  min-width: 80px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #0096ed;
+  box-shadow: 0 1px #666666, 0 -1px #53bfff;
+  &:hover{
+    background-color: #53bfff;
+  }
+}
+
+.roundButton{
+  @extend .button;
+  border-radius: 4px;
+}
+
+.largeButton{
+  @extend .button;
+  height: 40px;
+}
+
+
+%alert{
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+  border-left-width: 8px;
+  border-left-style: solid;
+  border-radius: 0px;
+}
+
+.alertError{
+  @extend %alert;
+  background-color: tomato;
+  color: #ffffff;
+  border-left-color: #dc3d21;
+}
+
+.alertWarning{
+  @extend %alert;
+  background-color: #eaaf51;
+  color: #ffffff;
+  border-left-color: #df8b00;
+}
+
+.alertSuccess{
+  @extend %alert;
+  background-color: #61b832;
+  color: #ffffff;
+  border-left-color: #55a12c;
+}
+
+.alertInfo{
+  @extend %alert;
+  background-color: #4ea5cd;
+  color: #ffffff;
+  border-left-color: #3b8eb5;
+}
+
+
+.buttonTest{
+  border: none;
+  padding: 8px;
+  min-width: 80px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 4px;
+  border-radius: 4px;
+}
+
+.backgroundPattern{
+  background-color: #cacaca;
+}
+
+.backgroundBlue{
+  background: linear-gradient(to bottom, #0f204b 0%, #0066a1 80%, #53a7d9 100%);
+  color: #ffffff;
 }

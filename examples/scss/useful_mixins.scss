@@ -1,0 +1,26 @@
+@mixin centralized {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin customFont($font-family, $font-url, $font-name, $weight) {
+  @font-face{
+    font: {
+        family: $font-family;
+        style: normal;
+        weight: $weight;
+    }
+    src: url($font-url + '' + $font-name + '.eot') format('eot'),
+         url($font-url + '' + $font-name + '.eot?#iefix') format('embedded-opentype'),
+         url($font-url + '' + $font-name + '.woff') format('woff'),
+         url($font-url + '' + $font-name + '.ttf') format('truetype')
+  }
+}
