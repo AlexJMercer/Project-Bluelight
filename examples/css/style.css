@@ -146,7 +146,7 @@ input[type="button"] {
   border-left-color: #3b8eb5;
 }
 
-.buttonTest {
+.botaoPattern, .botaoBlue {
   border: none;
   padding: 8px;
   min-width: 80px;
@@ -157,13 +157,18 @@ input[type="button"] {
   border-radius: 4px;
 }
 
-.backgroundPattern {
+.botaoPattern {
   background-color: #cacaca;
 }
 
-.backgroundBlue {
+.headerBlue, .botaoBlue {
   background: linear-gradient(to bottom, #0f204b 0%, #0066a1 80%, #53a7d9 100%);
   color: #ffffff;
+}
+
+.headerBlue {
+  padding: 20px 10px;
+  font-size: 25px;
 }
 
 /*# sourceMappingURL=style.css.map */

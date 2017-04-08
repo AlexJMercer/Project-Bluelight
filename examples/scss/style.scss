@@ -184,7 +184,7 @@ input[type="button"]{
 }
 
 
-.buttonTest{
+%buttonTest{
   border: none;
   padding: 8px;
   min-width: 80px;
@@ -195,11 +195,28 @@ input[type="button"]{
   border-radius: 4px;
 }
 
-.backgroundPattern{
+%backgroundPattern{
   background-color: #cacaca;
 }
 
-.backgroundBlue{
+%backgroundBlue{
   background: linear-gradient(to bottom, #0f204b 0%, #0066a1 80%, #53a7d9 100%);
   color: #ffffff;
+}
+
+.headerBlue{
+  padding: 20px 10px;
+  font-size: 25px;
+  @extend %backgroundBlue;
+}
+
+.botao{
+  &Pattern{
+    @extend %buttonTest;
+    @extend %backgroundPattern;
+  }
+  &Blue{
+    @extend %buttonTest;
+    @extend %backgroundBlue;
+  }
 }

@@ -1,13 +1,25 @@
 $colorBase: #3b5998;
 $colorMainFont: #1d2129;
+$colorFontSecondary: #365899;
 $colorFeaturedFont: #ffffff;
 $colorLinkFont: #365899;
 $colorMainHover: #dddfe2;
 $backgroundColor: #e9ebee;
 $borderColor:#ccc;
 $backgroundColorBoxes: #ffffff;
+$colorDivider: #CCC;
+
 $fontSize: 12px;
-$fontFamily: 'Open Sans',arial, sans-serif;
+$fontFamily: 'Open Sans', arial, sans-serif;
+
+$buttonPattern: #F6F7F9;
+$buttonPatternHover: #E9EBEE;
+$buttonPatternBorder: #CED0D4;
+$buttonPatternFont: #4B4F56;
+$buttonFeatured: #4267B2;
+$buttonFeaturedHover: #365899;
+$buttonFeaturedBorder: #4267B2;
+$buttonFeaturedFont: #FFFFFF;
 
 $mainColor: #3e4fb2;
 
@@ -66,13 +78,168 @@ body{
   border-left: 1px solid $borderColor;
 }
 
-.informationsAccount{width: 180px;}
-.feedNews{width: 500px;}
-.otherInformations{width: 310px;}
-.boxInitial{height: 150px;}
-.boxPublication{height: 500px;}
-.boxInfo{height: 370px;}
-.boxLanguages{height: 55px;}
+.informationsAccount{
+  width: 180px;
+  margin-right: 10px;
+}
+
+.feedNews{
+  width: 500px;
+}
+
+.otherInformations{
+  width: 310px;
+}
+
+.boxInitial{
+  //height: 150px;
+
+  header{
+		padding: 10px 0 0 10px;
+		display: flex;
+	}
+
+	content{
+		padding: 10px;
+		display: flex;
+
+		.photo{
+			height: 40px;
+			width: 40px;
+			background: $colorDivider;
+		}
+
+		textarea{
+			border: none;
+			outline: none;
+			resize: none;
+			margin-left: 10px;
+			width: 100%;
+			padding-top: 5px;
+			@include fontStyle($color:$colorDivider, $size:14px, $lineHeight: 15px);
+			font-family: $fontFamily;
+		}
+  }
+
+  footer{
+		display: flex;
+		justify-content: flex-end;
+	  padding: 5px 0 10px;
+	}
+
+
+}
+
+.inputArchive{
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	border-radius: 2px;
+	padding: 0 5px;
+	@include fontStyle($colorFontSecondary, $weight:bold);
+  font-family: $fontFamily;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 5px;
+		width: 16px;
+		height: 16px;
+
+	}
+
+	&.photo{
+		&:before{
+			background-image: url(../image/photo.png);
+		}
+	}
+
+	&.album{
+		&:before{
+			background-image: url(../image/folder.png);
+		}
+	}
+
+	&:hover{
+		background-color: #f6f7f9;
+	}
+
+}
+
+.verticalDivider{
+	border-left: 1px solid $colorDivider;
+	margin: 0 10px;
+}
+
+.horizontalDivider{
+	border-bottom: 1px solid $colorDivider;
+	margin: 5px 10px;
+}
+
+%botao{
+  border-radius: 0px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.buttonPattern{
+  @extend %botao;
+  background: $buttonPattern;
+  border: 1px solid $buttonPatternBorder;
+  @include fontStyle($color: $buttonPatternFont, $weight:bold);
+  display: inline-block;
+
+  &:before{
+    content: "";
+    position: absolute;
+    margin-right: 5px;
+    width: 12px;
+    margin: 4px;
+  }
+  &:hover{
+    background-color: $buttonPatternHover;
+  }
+  span{
+    margin-left: 24px;
+  }
+}
+
+.buttonFeatured{
+  @extend %botao;
+  background: $buttonFeatured;
+  border: 1px solid $buttonFeaturedBorder;
+  @include fontStyle($color:$buttonFeaturedFont, $weight:bold);
+
+  &:hover{
+    background-color: $buttonFeaturedHover;
+  }
+}
+
+.iconWorld:before{
+  background-image: url(../image/mundo.png);
+}
+
+input[type="file"]{
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	right: 0;
+	opacity: 0;
+
+}
+
+.boxPublication{
+  height: 500px;
+}
+
+.boxInfo{
+  height: 370px;
+}
+
+.boxLanguages{
+  height: 55px;
+}
 
 .infoGeneral{
   font-size: $fontSize;
@@ -109,12 +276,6 @@ body{
       }
     }
   }
-}
-
-@mixin ellipsis {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 a{

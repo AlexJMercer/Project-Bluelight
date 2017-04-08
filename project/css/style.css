@@ -41,6 +41,7 @@ body {
 
 .informationsAccount {
   width: 180px;
+  margin-right: 10px;
 }
 
 .feedNews {
@@ -51,8 +52,129 @@ body {
   width: 310px;
 }
 
-.boxInitial {
-  height: 150px;
+.boxInitial header {
+  padding: 10px 0 0 10px;
+  display: flex;
+}
+.boxInitial content {
+  padding: 10px;
+  display: flex;
+}
+.boxInitial content .photo {
+  height: 40px;
+  width: 40px;
+  background: #CCC;
+}
+.boxInitial content textarea {
+  border: none;
+  outline: none;
+  resize: none;
+  margin-left: 10px;
+  width: 100%;
+  padding-top: 5px;
+  color: #CCC;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 15px;
+  font-family: "Open Sans", arial, sans-serif;
+}
+.boxInitial footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 0 10px;
+}
+
+.inputArchive {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 2px;
+  padding: 0 5px;
+  color: #365899;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 22px;
+  font-family: "Open Sans", arial, sans-serif;
+}
+.inputArchive:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 16px;
+  height: 16px;
+}
+.inputArchive.photo:before {
+  background-image: url(../image/photo.png);
+}
+.inputArchive.album:before {
+  background-image: url(../image/folder.png);
+}
+.inputArchive:hover {
+  background-color: #f6f7f9;
+}
+
+.verticalDivider {
+  border-left: 1px solid #CCC;
+  margin: 0 10px;
+}
+
+.horizontalDivider {
+  border-bottom: 1px solid #CCC;
+  margin: 5px 10px;
+}
+
+.buttonPattern, .buttonFeatured {
+  border-radius: 0px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.buttonPattern {
+  background: #F6F7F9;
+  border: 1px solid #CED0D4;
+  color: #4B4F56;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 22px;
+  display: inline-block;
+}
+.buttonPattern:before {
+  content: "";
+  position: absolute;
+  margin-right: 5px;
+  width: 12px;
+  margin: 4px;
+}
+.buttonPattern:hover {
+  background-color: #E9EBEE;
+}
+.buttonPattern span {
+  margin-left: 24px;
+}
+
+.buttonFeatured {
+  background: #4267B2;
+  border: 1px solid #4267B2;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 22px;
+}
+.buttonFeatured:hover {
+  background-color: #365899;
+}
+
+.iconWorld:before {
+  background-image: url(../image/mundo.png);
+}
+
+input[type="file"] {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
 }
 
 .boxPublication {
