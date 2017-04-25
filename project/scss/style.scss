@@ -1,27 +1,29 @@
-$colorBase: #3b5998;
-$colorMainFont: #1d2129;
-$colorFontSecondary: #365899;
-$colorFeaturedFont: #ffffff;
-$colorLinkFont: #365899;
-$colorMainHover: #dddfe2;
-$backgroundColor: #e9ebee;
-$borderColor:#ccc;
-$backgroundColorBoxes: #ffffff;
-$colorDivider: #CCC;
+$color-base: #3b5998;
+$color-main-font: #1d2129;
+$color-font-secondary: #365899;
+$color-featured-font: #ffffff;
+$color-link-font: #365899;
+$color-main-hover: #dddfe2;
+$background-color: #e9ebee;
+$border-color:#ccc;
+$background-color-boxes: #ffffff;
+$color-divider: #CCC;
 
-$fontSize: 12px;
-$fontFamily: 'Open Sans', arial, sans-serif;
+$font-size: 12px;
+$font-family: 'Open Sans', arial, sans-serif;
 
-$buttonPattern: #F6F7F9;
-$buttonPatternHover: #E9EBEE;
-$buttonPatternBorder: #CED0D4;
-$buttonPatternFont: #4B4F56;
-$buttonFeatured: #4267B2;
-$buttonFeaturedHover: #365899;
-$buttonFeaturedBorder: #4267B2;
-$buttonFeaturedFont: #FFFFFF;
+$button-pattern: #F6F7F9;
+$button-pattern-hover: #E9EBEE;
+$button-pattern-border: #CED0D4;
+$button-pattern-font: #4B4F56;
+$button-featured: #4267B2;
+$button-featured-hover: #365899;
+$button-featured-border: #4267B2;
+$button-featured-font: #FFFFFF;
 
-$mainColor: #3e4fb2;
+$main-color: #3e4fb2;
+$main-color-title: #000000;
+$main-color-test: #000056;
 
 
 @mixin ellipsis {
@@ -30,23 +32,30 @@ $mainColor: #3e4fb2;
   text-overflow: ellipsis;
 }
 
-@mixin fontStyle($color, $size:12px, $weight:normal, $lineHeight:22px) {
+@mixin font-style($color, $size:12px, $weight:normal, $line-height:22px) {
   color: $color;
   font-size: $size;
   font-weight: $weight;
-  line-height: $lineHeight;
+  line-height: $line-height;
 }
+
+/*@mixin shadow-big-navbar(){
+    box-shadow: 0 10px 20px -12px rgba(0, 0, 0, $mdb-shadow-key-penumbra-opacity * 3),
+    0  3px 20px 0px rgba(0, 0, 0, $mdb-shadow-ambient-shadow-opacity),
+    0  8px 10px -5px rgba(0, 0, 0, $mdb-shadow-key-umbra-opacity);
+}*/
 
 body{
   margin: 0;
   padding: 0;
-  background-color: $backgroundColor;
+  background-color: $background-color;
 }
 
 .header{
   height: 50px;
-  background-color: $colorBase;
-  border-bottom: 1px solid $colorBase;
+  background-color: $color-base;
+  border-bottom: 1px solid $color-base;
+  //@include shadow-big-navbar();
 }
 
 .content{
@@ -55,43 +64,43 @@ body{
   justify-content: space-between;
 }
 
-.mainContent{
+.main-content{
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.mainContent > div{
+.main-content > div{
   display: flex;
   margin: 10px;
 }
 
 [class*="box"]{
-  background-color: $backgroundColorBoxes;
+  background-color: $background-color-boxes;
   border-radius: 0px;
-  border: 1px solid $borderColor;
+  border: 1px solid $border-color;
   margin: 0px 10px 10px 0;
 }
 
-.sideBar{
+.side-bar{
   width: 200px;
-  border-left: 1px solid $borderColor;
+  border-left: 1px solid $border-color;
 }
 
-.informationsAccount{
+.informations-account{
   width: 180px;
   margin-right: 10px;
 }
 
-.feedNews{
+.feed-news{
   width: 500px;
 }
 
-.otherInformations{
+.other-informations{
   width: 310px;
 }
 
-.boxInitial{
+.box-initial{
   //height: 150px;
 
   header{
@@ -106,7 +115,7 @@ body{
 		.photo{
 			height: 40px;
 			width: 40px;
-			background: $colorDivider;
+			background: $color-divider;
 		}
 
 		textarea{
@@ -116,8 +125,8 @@ body{
 			margin-left: 10px;
 			width: 100%;
 			padding-top: 5px;
-			@include fontStyle($color:$colorDivider, $size:14px, $lineHeight: 15px);
-			font-family: $fontFamily;
+			@include font-style($color:$color-divider, $size:14px, $line-height: 15px);
+			font-family: $font-family;
 		}
   }
 
@@ -130,14 +139,14 @@ body{
 
 }
 
-.inputArchive{
+.input-archive{
 	display: inline-block;
 	overflow: hidden;
 	position: relative;
 	border-radius: 2px;
 	padding: 0 5px;
-	@include fontStyle($colorFontSecondary, $weight:bold);
-  font-family: $fontFamily;
+	@include font-style($color-font-secondary, $weight:bold);
+  font-family: $font-family;
 
 	&:before {
 		content: "";
@@ -167,13 +176,13 @@ body{
 
 }
 
-.verticalDivider{
-	border-left: 1px solid $colorDivider;
+.vertical-divider{
+	border-left: 1px solid $color-divider;
 	margin: 0 10px;
 }
 
-.horizontalDivider{
-	border-bottom: 1px solid $colorDivider;
+.horizontal-divider{
+	border-bottom: 1px solid $color-divider;
 	margin: 5px 10px;
 }
 
@@ -183,11 +192,11 @@ body{
   margin-right: 10px;
 }
 
-.buttonPattern{
+.button-pattern{
   @extend %botao;
-  background: $buttonPattern;
-  border: 1px solid $buttonPatternBorder;
-  @include fontStyle($color: $buttonPatternFont, $weight:bold);
+  background: $button-pattern;
+  border: 1px solid $button-pattern-border;
+  @include font-style($color: $button-pattern-font, $weight:bold);
   display: inline-block;
 
   &:before{
@@ -198,25 +207,25 @@ body{
     margin: 4px;
   }
   &:hover{
-    background-color: $buttonPatternHover;
+    background-color: $button-pattern-hover;
   }
   span{
     margin-left: 24px;
   }
 }
 
-.buttonFeatured{
+.button-featured{
   @extend %botao;
-  background: $buttonFeatured;
-  border: 1px solid $buttonFeaturedBorder;
-  @include fontStyle($color:$buttonFeaturedFont, $weight:bold);
+  background: $button-featured;
+  border: 1px solid $button-featured-border;
+  @include font-style($color:$button-featured-font, $weight:bold);
 
   &:hover{
-    background-color: $buttonFeaturedHover;
+    background-color: $button-featured-hover;
   }
 }
 
-.iconWorld:before{
+.icon-world:before{
   background-image: url(../image/mundo.png);
 }
 
@@ -229,28 +238,28 @@ input[type="file"]{
 
 }
 
-.boxPublication{
+.box-publication{
   height: 500px;
 }
 
-.boxInfo{
+.box-info{
   height: 370px;
 }
 
-.boxLanguages{
+.box-languages{
   height: 55px;
 }
 
-.infoGeneral{
-  font-size: $fontSize;
-  font-family: $fontFamily;
+.info-general{
+  font-size: $font-size;
+  font-family: $font-family;
   ul{
     list-style-type: none;
     padding: 0;
     margin: 0;
     h4{
       margin: 15px 0 0;
-      @include fontStyle($color: #666);
+      @include font-style($color: #666);
       text-transform: uppercase;
     }
     li{
@@ -260,7 +269,7 @@ input[type="file"]{
         display: inline-block;
         padding: 5px;
         border-radius: 3px;
-        @include fontStyle($color: $colorMainFont, $lineHeight: 16px);
+        @include font-style($color: $color-main-font, $line-height: 16px);
         &:before{
           content: "";
           display: inline-block;
@@ -271,7 +280,7 @@ input[type="file"]{
           background-image: url('../image/defaultIcon.png');
         }
         &:hover{
-          background-color: $colorMainHover;
+          background-color: $color-main-hover;
         }
       }
     }
@@ -284,6 +293,6 @@ a{
   display: inline-block;
   padding: 5px;
   border-radius: 3px;
-  color: $colorMainFont;
+  color: $color-main-font;
   @include ellipsis;
 }
