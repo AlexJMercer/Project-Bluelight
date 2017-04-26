@@ -1,0 +1,38 @@
+%button{
+  border-radius: 0px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.button-pattern{
+  @extend %button;
+  background: $button-pattern;
+  border: 1px solid $button-pattern-border;
+  @include font-style($color: $button-pattern-font, $weight:bold);
+  display: inline-block;
+
+  &:before{
+    content: "";
+    position: absolute;
+    margin-right: 5px;
+    width: 12px;
+    margin: 4px;
+  }
+  &:hover{
+    background-color: $button-pattern-hover;
+  }
+  span{
+    margin-left: 24px;
+  }
+}
+
+.button-featured{
+  @extend %button;
+  background: $button-featured;
+  border: 1px solid $button-featured-border;
+  @include font-style($color:$button-featured-font, $weight:bold);
+
+  &:hover{
+    background-color: $button-featured-hover;
+  }
+}

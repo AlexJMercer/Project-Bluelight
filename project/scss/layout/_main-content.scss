@@ -1,0 +1,16 @@
+.content{
+  min-height: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-content{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-content > div{
+  display: flex;
+  margin: 10px;
+}

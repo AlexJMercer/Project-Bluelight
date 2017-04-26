@@ -1,0 +1,6 @@
+.header{
+  height: 50px;
+  background-color: $color-base;
+  border-bottom: 1px solid $color-base;
+  //@include shadow-big-navbar();
+}

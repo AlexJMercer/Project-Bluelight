@@ -1,0 +1,36 @@
+.info-general{
+  font-size: $font-size;
+  font-family: $font-family;
+  ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    h4{
+      margin: 15px 0 0;
+      @include font-style($color: #666);
+      text-transform: uppercase;
+    }
+    li{
+      a{
+        width: 170px;
+        text-decoration: none;
+        display: inline-block;
+        padding: 5px;
+        border-radius: 3px;
+        @include font-style($color: $color-main-font, $line-height: 16px);
+        &:before{
+          content: "";
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 5px;
+          width: 16px;
+          height: 16px;
+          background-image: url('../image/defaultIcon.png');
+        }
+        &:hover{
+          background-color: $color-main-hover;
+        }
+      }
+    }
+  }
+}
