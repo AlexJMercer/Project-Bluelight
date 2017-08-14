@@ -8,7 +8,23 @@
   </head>
   <body>
     <div class="header">
-
+      <div class="line">
+        <div class="panel-6">
+          <div class="icon"></div>
+          <div class="search"></div>
+        </div>
+        <div class="panel-2">
+          <div class="user"><a href="#">Mercer</a></div>
+          <div class="vertical-divider"></div>
+          <div class="home"><a href="#">Home</a></div>
+        </div>
+        <div class="panel-2">
+          <div class="person"><a href="#"></a></div>
+          <div class="message"><a href="#"></a></div>
+          <div class="world"><a href="#"></a></div>
+        </div>
+        <div class="panel-2"></div>
+      </div>
     </div>
     <div class="content">
       <div class="main-content">
@@ -34,7 +50,7 @@
             </nav>
           </div>
           <div class="feed-news">
-            <div class="box-initial">
+            <div class="box-initial shadow-box">
               <header>
                 <div class="input-archive photo">
                   Photo/Video <input type="file">
@@ -56,8 +72,22 @@
 								<button class="button-featured"><span>Post</span></button>
 							</footer>
             </div>
-            <div class="box-publication"></div>
-            <div class="box-publication"></div>
+            <div class="box-publication shadow-box">
+              <div class="actions">
+                <div class="like">
+                  <span class='like-btn'> Like </span>
+                  <div class="reactions">
+                    <div class="reaction-like"><span>Like</span></div>
+                    <div class="reaction-love"><span>Love</span></div>
+                    <div class="reaction-haha"><span>Haha</span></div>
+                    <div class="reaction-wow"><span>Wow</span></div>
+                    <div class="reaction-sad"><span>Sad</span></div>
+                    <div class="reaction-angry"><span>Angry</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box-publication shadow-box"></div>
 
           </div>
           <div class="other-informations">
@@ -68,5 +98,11 @@
       </div>
       <div class="sidebar"></div>
     </div>
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
   </body>
 </html>

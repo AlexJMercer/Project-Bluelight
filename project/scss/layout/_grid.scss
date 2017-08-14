@@ -1,0 +1,16 @@
+.line{
+  display: flex;
+}
+
+[class*="panel"]{
+  margin: 5px;
+  display: flex;
+}
+
+$i: 1;
+@while($i <= 12){
+  .panel-#{$i}{
+    flex: $i;
+  }
+  $i: $i + 1;
+}

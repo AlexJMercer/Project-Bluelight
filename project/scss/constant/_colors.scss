@@ -1,19 +1,22 @@
-$color-base: #3b5998;
 $color-main-font: #1d2129;
-$color-font-secondary: #365899;
 $color-featured-font: #ffffff;
 $color-link-font: #365899;
-$color-main-hover: #dddfe2;
-$background-color: #e9ebee;
 $border-color:#ccc;
 $background-color-boxes: #ffffff;
 $color-divider: #CCC;
-
 $button-pattern: #F6F7F9;
 $button-pattern-hover: #E9EBEE;
 $button-pattern-border: #CED0D4;
 $button-pattern-font: #4B4F56;
-$button-featured: #4267B2;
-$button-featured-hover: #365899;
-$button-featured-border: #4267B2;
+
+//Colors that can be changed to be differents themes
+//$color-base: #000a0c;
+$color-base: #00ccff;
+$color-main-border: darken($color-base, 8%);
+$color-main-hover: lighten(desaturate($color-base, 36), 50%);
+$color-font-secondary: darken($color-base, 10%);
+$background-color: lighten(desaturate($color-base, 30), 95%);
+$button-featured: lighten($color-base, 50%);
+$button-featured-hover: darken($color-base, 10%);
+$button-featured-border: lighten($color-base, 90%);
 $button-featured-font: #FFFFFF;

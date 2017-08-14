@@ -1,13 +1,18 @@
+@mixin shadow-box {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+
 [class*="box"]{
   background-color: $background-color-boxes;
   border-radius: 0px;
-  border: 1px solid $border-color;
-  margin: 0px 10px 10px 0;
+  //border: 1px solid $border-color;
+  margin: 0px 10px 20px 0;
 }
 
 .box-initial{
   //height: 150px;
-
+  @include shadow-box;
   header{
 		padding: 10px 0 0 10px;
 		display: flex;
@@ -81,12 +86,19 @@
 
 .box-publication{
   height: 500px;
+  display: flex;
+  align-items: flex-end;
+  @include shadow-box;
+
+
 }
 
 .box-info{
   height: 370px;
+    @include shadow-box;
 }
 
 .box-languages{
   height: 55px;
+    @include shadow-box;
 }
