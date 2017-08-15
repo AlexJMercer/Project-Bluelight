@@ -4,13 +4,13 @@
 // and disabled options for all buttons
 
 @mixin button-variant($color, $background) {
-  $active-background: darken($background, 10%);
+  $active-background: lighten($background, 10%);
   //$active-border: darken($border, 12%);
 
   color: $color;
   background-color: $background;
   //border-color: $border;
-  @include box-shadow($btn-box-shadow);
+  //@include box-shadow($btn-box-shadow);
 
   // Hover and focus styles are shared
   @include hover {
@@ -22,9 +22,9 @@
   &.focus {
     // Avoid using mixin so we can pass custom focus shadow properly
     @if $enable-shadows {
-      box-shadow: $btn-box-shadow, 0 0 0 2px;
+      //box-shadow: $btn-box-shadow, 0 0 0 2px;
     } @else {
-      box-shadow: 0 0 0 2px;
+      //box-shadow: 0 0 0 2px;
     }
   }
 

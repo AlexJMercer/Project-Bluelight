@@ -106,6 +106,7 @@ $brand-warning: $yellow !default;
 $brand-info: $light-blue !default;
 $brand-rose: $pink !default;
 $brand-inverse: $soft-black !default;
+$brand-white: $white !default;
 
 // Options
 //
@@ -933,7 +934,7 @@ $carousel-transition:           transform .6s ease-in-out !default;
 // Close
 
 $close-font-size:             $font-size-base * 1.5 !default;
-$close-font-weight:           $font-weight-bold !default;
+$close-font-weight:           $font-weight-normal !default;
 $close-color:                 $black !default;
 $close-text-shadow:           0 1px 0 $white !default;
 
@@ -953,3 +954,8 @@ $pre-bg:                      $gray-lightest !default;
 $pre-color:                   $gray-dark !default;
 $pre-border-color:            #ccc !default;
 $pre-scrollable-max-height:   340px !default;
+
+
+$shadow-key-penumbra-opacity:     0.14 !default;
+$shadow-key-umbra-opacity:        0.2 !default;
+$shadow-ambient-shadow-opacity:   0.12 !default;

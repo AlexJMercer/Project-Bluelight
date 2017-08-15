@@ -3,6 +3,7 @@
 //
 // Base styles
 //
+@import "_shadows";
 
 .btn {
   display: inline-block;
@@ -18,14 +19,21 @@
   @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius);
   @include transition($btn-transition);
 
+
+  &.btn-raised{
+    @include shadow-4dp();
+  }
+
   // Share hover and focus styles
   @include hover-focus {
     text-decoration: none;
+    @include shadow-6dp();
   }
   &:focus,
   &.focus {
     outline: 0;
-    box-shadow: $btn-focus-box-shadow;
+    //box-shadow: $btn-focus-box-shadow;
+    @include focus-shadow();
   }
 
   // Disabled comes first so active can properly restyle
@@ -39,7 +47,8 @@
   &:active,
   &.active {
     background-image: none;
-    @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+    //@include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+    @include shadow-4dp();
   }
 }
 
@@ -100,8 +109,8 @@ fieldset[disabled] a.btn {
 
 // Make a button look and behave like a link
 .btn-link {
-  font-weight: $font-weight-normal;
-  color: $link-color;
+  font-weight: $font-weight-custom;
+  color: $brand-inverse;
   border-radius: 0;
 
   &,
@@ -109,7 +118,7 @@ fieldset[disabled] a.btn {
   &.active,
   &:disabled {
     background-color: transparent;
-    @include box-shadow(none);
+    //@include box-shadow(none);
   }
   &,
   &:focus,
@@ -120,8 +129,8 @@ fieldset[disabled] a.btn {
     border-color: transparent;
   }
   @include hover-focus {
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
+    color: $brand-inverse;
+    text-decoration: $brand-inverse;
     background-color: transparent;
   }
   &:disabled {

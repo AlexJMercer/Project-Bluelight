@@ -42,7 +42,7 @@
 //
 // Example usage: change the default blue border and shadow to white for better
 // contrast against a dark gray background.
-@mixin form-control-focus() {
+/*@mixin form-control-focus() {
   &:focus {
     color: $input-color-focus;
     background-color: $input-bg-focus;
@@ -50,7 +50,19 @@
     outline: none;
     @include box-shadow($input-box-shadow-focus);
   }
+}*/
+
+
+@mixin form-control-focus() {
+  &:focus {
+    outline: none;
+    background-image: linear-gradient($brand-info, $brand-info), linear-gradient( #D2D2D2, #D2D2D2);
+    background-size: 100% 2px, 100% 1px;
+    box-shadow: none;
+    transition-duration: 0.3s;
+  }
 }
+
 
 // Form control sizing
 //

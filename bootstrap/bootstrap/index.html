@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/ripple.min.css">
 
     <title>Starter Template for Bootstrap</title>
 
@@ -14,7 +15,7 @@
     <link href="bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
+    <!--link href="starter-template.css" rel="stylesheet"-->
     <style>
         body {
           padding-top: 5rem;
@@ -61,7 +62,7 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container-fluid">
 
       <div class="starter-template">
         <h1>Bootstrap starter template</h1>
@@ -108,7 +109,7 @@
       </div>
 
       <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-raised btn-primary">Primary</button>
       <!-- Secondary, outline button -->
       <button type="button" class="btn btn-secondary">Secondary</button>
       <!-- Indicates a successful or positive action -->
@@ -120,7 +121,7 @@
       <!-- Indicates a dangerous or potentially negative action -->
       <button type="button" class="btn btn-danger">Danger</button>
       <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
-      <button type="button" class="btn btn-link">Link</button>
+      <button type="button" class="btn btn-raised btn-link">Link</button>
       <br>
 
       <div class="form-group row">
@@ -201,11 +202,7 @@
           <input class="form-control" type="color" value="#563d7c" id="example-color-input">
         </div>
       </div>
-
-
-
     </div><!-- /.container -->
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -213,8 +210,28 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/dist/ripple.min.js"></script>
+    <script type="text/javascript">
+    $.ripple(".btn", {
+              debug: false, // Turn Ripple.js logging on/off
+              on: 'mousedown', // The event to trigger a ripple effect
+
+              opacity: 0.4, // The opacity of the ripple
+              color: "auto", // Set the background color. If set to "auto", it will use the text color
+              multi: false, // Allow multiple ripples per element
+
+              duration: 0.5, // The duration of the ripple
+
+              // Filter function for modifying the speed of the ripple
+              rate: function(pxPerSecond) {
+                    return pxPerSecond;
+                },
+
+              easing: 'linear' // The CSS3 easing function of the ripple
+              });
+    </script>
   </body>
 </html>
