@@ -21,19 +21,25 @@
 
 
   &.btn-raised{
-    @include shadow-4dp();
+    &:not(.btn-link){
+        @include shadow-4dp();
+    }
   }
 
   // Share hover and focus styles
   @include hover-focus {
-    text-decoration: none;
-    @include shadow-6dp();
+    &:not(.btn-link){
+      text-decoration: none;
+      @include shadow-6dp();
+    }
   }
   &:focus,
   &.focus {
-    outline: 0;
-    //box-shadow: $btn-focus-box-shadow;
-    @include focus-shadow();
+    &:not(.btn-link){
+      outline: 0;
+      //box-shadow: $btn-focus-box-shadow;
+      @include focus-shadow();
+    }
   }
 
   // Disabled comes first so active can properly restyle
@@ -81,6 +87,10 @@ fieldset[disabled] a.btn {
 .btn-danger {
   @include button-variant($btn-danger-color, $btn-danger-bg);
 }
+.btn-orange {
+  @include button-variant($btn-orange-color, $btn-orange-bg);
+
+}
 
 // Remove all backgrounds
 .btn-outline-primary {
@@ -100,6 +110,24 @@ fieldset[disabled] a.btn {
 }
 .btn-outline-danger {
   @include button-outline-variant($btn-danger-bg);
+}
+
+
+.btn-gradient-peach {
+  color: $white;
+  background: $brand-gradient-peach;
+}
+.btn-gradient-aqua {
+  color: $white;
+  background: linear-gradient(40deg,#3aa2ff,#1fffac);
+}
+.btn-gradient-purple {
+  color: $white;
+  background: linear-gradient(40deg,#ff88ce,#8f8bf7);
+}
+.btn-gradient-blue {
+  color: $white;
+  background: linear-gradient(40deg,#5ed1fc,#3647b3);
 }
 
 
@@ -124,13 +152,16 @@ fieldset[disabled] a.btn {
   &:focus,
   &:active {
     border-color: transparent;
+    outline: 0
+    //text-decoration: underline;
   }
   @include hover {
     border-color: transparent;
+    text-decoration: underline;
   }
   @include hover-focus {
     color: $brand-inverse;
-    text-decoration: $brand-inverse;
+    text-decoration: underline;
     background-color: transparent;
   }
   &:disabled {

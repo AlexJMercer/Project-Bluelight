@@ -99,7 +99,7 @@ $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
 // Reassign color vars to semantic color scheme
-$brand-primary: $blue !default;
+$brand-primary: $teal !default;
 $brand-success: $green !default;
 $brand-danger: $red !default;
 $brand-warning: $yellow !default;
@@ -107,6 +107,9 @@ $brand-info: $light-blue !default;
 $brand-rose: $pink !default;
 $brand-inverse: $soft-black !default;
 $brand-white: $white !default;
+$brand-orange: $deep-orange !default;
+
+$brand-gradient-peach: linear-gradient(40deg, #FFD86F,#FC6262) !default;
 
 // Options
 //
@@ -233,7 +236,7 @@ $grid-gutter-widths: (
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif !default;
+$font-family-sans-serif: Roboto, Open Sans, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif !default;
 $font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:       $font-family-sans-serif !default;
@@ -381,6 +384,10 @@ $btn-warning-border:             $btn-warning-bg !default;
 $btn-danger-color:               $white !default;
 $btn-danger-bg:                  $brand-danger !default;
 $btn-danger-border:              $btn-danger-bg !default;
+
+$btn-orange-color:               $white !default;
+$btn-orange-bg:                  $brand-orange !default;
+$btn-orange-border:              $btn-orange-bg !default;
 
 $btn-link-disabled-color:        $gray-light !default;
 
@@ -597,7 +604,7 @@ $zindex-tooltip:            1070 !default;
 
 $navbar-border-radius:              $border-radius !default;
 $navbar-padding-x:                  $spacer !default;
-$navbar-padding-y:                  ($spacer / 2) !default;
+$navbar-padding-y:                  0.75rem !default;
 
 $navbar-brand-padding-y:            .25rem !default;
 

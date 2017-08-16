@@ -7,6 +7,8 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="ext/font-awesome.min.css">
     <link rel="stylesheet" href="dist/css/ripple.min.css">
 
     <title>Starter Template for Bootstrap</title>
@@ -24,17 +26,19 @@
           padding: 3rem 1.5rem;
           text-align: center;
         }
+
     </style>
   </head>
 
   <body>
 
+  <div class="container-fluid">
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+      <div class="container">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand" href="#">Navbar</a>
-
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
@@ -60,8 +64,9 @@
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
+      </div>
     </nav>
-
+  </div>
     <div class="container-fluid">
 
       <div class="starter-template">
@@ -103,105 +108,62 @@
 
       <div class="alert alert-warning alert-dismissible fade show" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+          <span aria-hidden="true"><i class="fa fa-times"></i></span>
         </button>
         <strong>Holy guacamole!</strong> You should check in on some of those fields below.
       </div>
+      <div class="container">
+      <form class="form-control" action="index.html" method="post">
+        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+        <button type="button" class="btn btn-raised btn-primary">Primary</button>
+        <!-- Secondary, outline button -->
+        <button type="button" class="btn btn-raised btn-secondary">Secondary</button>
+        <!-- Indicates a successful or positive action -->
+        <button type="button" class="btn btn-raised btn-success">Success</button>
+        <!-- Contextual button for informational alert messages -->
+        <button type="button" class="btn btn-raised btn-info">Info</button>
+        <!-- Indicates caution should be taken with this action -->
+        <button type="button" class="btn btn-raised btn-warning">Warning</button>
+        <!-- Indicates a dangerous or potentially negative action -->
+        <button type="button" class="btn btn-raised btn-danger">Danger</button>
+        <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+        <button type="button" class="btn btn-raised btn-link">Link</button>
+      </form>
+      </div>
+      <div class="container">
+        <!-- Contextual button for informational alert messages -->
+        <button type="button" class="btn btn-raised btn-info btn-block">Info</button>
+        <!-- Contextual button for informational alert messages -->
+        <button type="button" class="btn btn-raised btn-orange btn-block">WHATS</button>
+        <!-- Contextual button for informational alert messages -->
+        <button type="button" class="btn btn-raised btn-link btn-block">WHATS</button>
+        <br>
+        <!-- Contextual button for informational alert messages -->
+        <button type="button" class="btn btn-raised btn-gradient-peach">WHATS</button>
+        <!-- Contextual button for informational alert messages -->
+        <button type="button" class="btn btn-raised btn-gradient-purple">WHATS</button>
+        <!-- Contextual button for informational alert messages -->
+        <button type="button" class="btn btn-raised btn-gradient-blue">WHATS</button>
+        <!-- Contextual button for informational alert messages -->
+        <button type="button" class="btn btn-raised btn-gradient-aqua">WHATS</button>
 
-      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-      <button type="button" class="btn btn-raised btn-primary">Primary</button>
-      <!-- Secondary, outline button -->
-      <button type="button" class="btn btn-secondary">Secondary</button>
-      <!-- Indicates a successful or positive action -->
-      <button type="button" class="btn btn-success">Success</button>
-      <!-- Contextual button for informational alert messages -->
-      <button type="button" class="btn btn-info">Info</button>
-      <!-- Indicates caution should be taken with this action -->
-      <button type="button" class="btn btn-warning">Warning</button>
-      <!-- Indicates a dangerous or potentially negative action -->
-      <button type="button" class="btn btn-danger">Danger</button>
-      <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
-      <button type="button" class="btn btn-raised btn-link">Link</button>
-      <br>
+    <div class="col-md-10 offset-md-1">
+      <div class="card text-center">
+        <div class="card-header">
+          Featured
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">Special title treatment</h4>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer text-muted">
+          2 days ago
+        </div>
+      </div>
+    </div>
 
-      <div class="form-group row">
-        <label for="example-text-input" class="col-2 col-form-label">Text</label>
-        <div class="col-10">
-          <input class="form-control" type="text" value="Artisanal kale" id="example-text-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-search-input" class="col-2 col-form-label">Search</label>
-        <div class="col-10">
-          <input class="form-control" type="search" value="How do I shoot web" id="example-search-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-email-input" class="col-2 col-form-label">Email</label>
-        <div class="col-10">
-          <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-url-input" class="col-2 col-form-label">URL</label>
-        <div class="col-10">
-          <input class="form-control" type="url" value="https://getbootstrap.com" id="example-url-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-tel-input" class="col-2 col-form-label">Telephone</label>
-        <div class="col-10">
-          <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-password-input" class="col-2 col-form-label">Password</label>
-        <div class="col-10">
-          <input class="form-control" type="password" value="hunter2" id="example-password-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-number-input" class="col-2 col-form-label">Number</label>
-        <div class="col-10">
-          <input class="form-control" type="number" value="42" id="example-number-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>
-        <div class="col-10">
-          <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-date-input" class="col-2 col-form-label">Date</label>
-        <div class="col-10">
-          <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-month-input" class="col-2 col-form-label">Month</label>
-        <div class="col-10">
-          <input class="form-control" type="month" value="2011-08" id="example-month-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-week-input" class="col-2 col-form-label">Week</label>
-        <div class="col-10">
-          <input class="form-control" type="week" value="2011-W33" id="example-week-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-time-input" class="col-2 col-form-label">Time</label>
-        <div class="col-10">
-          <input class="form-control" type="time" value="13:45:00" id="example-time-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-color-input" class="col-2 col-form-label">Color</label>
-        <div class="col-10">
-          <input class="form-control" type="color" value="#563d7c" id="example-color-input">
-        </div>
-      </div>
+
     </div><!-- /.container -->
 
     <!-- Bootstrap core JavaScript
