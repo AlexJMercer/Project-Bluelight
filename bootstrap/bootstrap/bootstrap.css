@@ -1987,6 +1987,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   transition: all 0.2s ease-in-out; }
   .btn.btn-raised:not(.btn-link) {
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2); }
+  .btn.btn-rounded {
+    border-radius: 10em; }
   .btn:focus:not(.btn-link) {
     text-decoration: none;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2); }
@@ -2199,18 +2201,70 @@ fieldset[disabled] a.btn {
 .btn-gradient-peach {
   color: #ffffff;
   background: linear-gradient(40deg, #FFD86F, #FC6262); }
+  .btn-gradient-peach:hover {
+    color: #ffffff;
+    background: linear-gradient(40deg, #FFD86F, #FC6262); }
+  .btn-gradient-peach.disabled, .btn-gradient-peach:disabled {
+    background: linear-gradient(40deg, #FFD86F, #FC6262); }
+  .btn-gradient-peach:active, .btn-gradient-peach.active, .show > .btn-gradient-peach.dropdown-toggle {
+    color: #ffffff;
+    background: linear-gradient(40deg, #FFD86F, #FC6262);
+    box-shadow: none; }
 
 .btn-gradient-aqua {
   color: #ffffff;
   background: linear-gradient(40deg, #3aa2ff, #1fffac); }
+  .btn-gradient-aqua:hover {
+    color: #ffffff;
+    background: linear-gradient(40deg, #3aa2ff, #1fffac); }
+  .btn-gradient-aqua.disabled, .btn-gradient-aqua:disabled {
+    background: linear-gradient(40deg, #3aa2ff, #1fffac); }
+  .btn-gradient-aqua:active, .btn-gradient-aqua.active, .show > .btn-gradient-aqua.dropdown-toggle {
+    color: #ffffff;
+    background: linear-gradient(40deg, #3aa2ff, #1fffac);
+    box-shadow: none; }
 
 .btn-gradient-purple {
   color: #ffffff;
   background: linear-gradient(40deg, #ff88ce, #8f8bf7); }
+  .btn-gradient-purple:hover {
+    color: #ffffff;
+    background: linear-gradient(40deg, #ff88ce, #8f8bf7); }
+  .btn-gradient-purple.disabled, .btn-gradient-purple:disabled {
+    background: linear-gradient(40deg, #ff88ce, #8f8bf7); }
+  .btn-gradient-purple:active, .btn-gradient-purple.active, .show > .btn-gradient-purple.dropdown-toggle {
+    color: #ffffff;
+    background: linear-gradient(40deg, #ff88ce, #8f8bf7);
+    box-shadow: none; }
 
 .btn-gradient-blue {
   color: #ffffff;
   background: linear-gradient(40deg, #5ed1fc, #3647b3); }
+  .btn-gradient-blue:hover {
+    color: #ffffff;
+    background: linear-gradient(40deg, #5ed1fc, #3647b3); }
+  .btn-gradient-blue.disabled, .btn-gradient-blue:disabled {
+    background: linear-gradient(40deg, #5ed1fc, #3647b3); }
+  .btn-gradient-blue:active, .btn-gradient-blue.active, .show > .btn-gradient-blue.dropdown-toggle {
+    color: #ffffff;
+    background: linear-gradient(40deg, #5ed1fc, #3647b3);
+    box-shadow: none; }
+
+.btn-outline-alt-primary {
+  color: #00bfa5;
+  background-image: none;
+  background-color: transparent;
+  border: 2px solid #00bfa5; }
+  .btn-outline-alt-primary:hover {
+    color: #00bfa5;
+    background-color: transparent; }
+  .btn-outline-alt-primary:focus, .btn-outline-alt-primary.focus {
+    box-shadow: 0 0 0 2px rgba(0, 191, 165, 0.5); }
+  .btn-outline-alt-primary.disabled, .btn-outline-alt-primary:disabled {
+    color: #00bfa5;
+    background-color: transparent; }
+  .btn-outline-alt-primary:active, .btn-outline-alt-primary.active, .show > .btn-outline-alt-primary.dropdown-toggle {
+    color: #00bfa5; }
 
 .btn-link {
   font-weight: 500;
@@ -2321,7 +2375,6 @@ tbody.collapse.show {
   list-style: none;
   background-color: #ffffff;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175); }
 
@@ -3140,16 +3193,24 @@ tbody.collapse.show {
 
 .card-header {
   padding: 0.75rem 1.25rem;
-  margin-bottom: 0;
   background-color: #f7f7f9;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+  margin: 15px;
+  padding: 15px 0; }
   .card-header:first-child {
     border-radius: calc(0 - 1px) calc(0 - 1px) 0 0; }
 
+.card-material {
+  padding: 50px 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: -40px;
+  background-color: #03a9f4;
+  color: #ffffff;
+  box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.42), 0 3px 20px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2); }
+
 .card-footer {
   padding: 0.75rem 1.25rem;
-  background-color: #f7f7f9;
-  border-top: 1px solid rgba(0, 0, 0, 0.125); }
+  background-color: #f7f7f9; }
   .card-footer:last-child {
     border-radius: 0 0 calc(0 - 1px) calc(0 - 1px); }
 

@@ -26,6 +26,10 @@
     }
   }
 
+  &.btn-rounded{
+    border-radius: $btn-rounded-border;
+  }
+
   // Share hover and focus styles
   @include hover-focus {
     &:not(.btn-link){
@@ -114,22 +118,22 @@ fieldset[disabled] a.btn {
 
 
 .btn-gradient-peach {
-  color: $white;
-  background: $brand-gradient-peach;
+  @include button-gradient-variant($btn-gradient-peach-color, $btn-gradient-peach-bg);
 }
 .btn-gradient-aqua {
-  color: $white;
-  background: linear-gradient(40deg,#3aa2ff,#1fffac);
+  @include button-gradient-variant($btn-gradient-aqua-color, $btn-gradient-aqua-bg);
 }
 .btn-gradient-purple {
-  color: $white;
-  background: linear-gradient(40deg,#ff88ce,#8f8bf7);
+  @include button-gradient-variant($btn-gradient-purple-color, $btn-gradient-purple-bg);
 }
 .btn-gradient-blue {
-  color: $white;
-  background: linear-gradient(40deg,#5ed1fc,#3647b3);
+  @include button-gradient-variant($btn-gradient-blue-color, $btn-gradient-blue-bg);
 }
 
+
+.btn-outline-alt-primary {
+  @include button-outline-alt-variant($btn-primary-bg);
+}
 
 //
 // Link buttons

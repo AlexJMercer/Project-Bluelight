@@ -78,6 +78,80 @@
   }
 }
 
+@mixin button-gradient-variant($color, $background) {
+  $active-background: $background;
+  //$active-border: darken($border, 12%);
+
+  color: $color;
+  background: $background;
+  //border-color: $border;
+  //@include box-shadow($btn-box-shadow);
+
+  // Hover and focus styles are shared
+  @include hover {
+    color: $color;
+    background: $active-background;
+    //border-color: $active-border;
+  }
+  &:focus,
+  &.focus {
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      //box-shadow: $btn-box-shadow, 0 0 0 2px;
+    } @else {
+      //box-shadow: 0 0 0 2px;
+    }
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    background: $background;
+    //border-color: $border;
+  }
+
+  &:active,
+  &.active,
+  .show > &.dropdown-toggle {
+    color: $color;
+    background: $active-background;
+    //background-image: none; // Remove the gradient for the pressed/active state
+    //border-color: $active-border;
+    @include box-shadow($btn-active-box-shadow);
+  }
+}
+
+@mixin button-outline-alt-variant($color) {
+  color: $color;
+  background-image: none;
+  background-color: transparent;
+  border: 2px solid $color;
+
+  @include hover {
+    color: $color;
+    background-color: transparent;
+    //border-color: $color;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 2px rgba($color, .5);
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $color;
+    background-color: transparent;
+  }
+
+  &:active,
+  &.active,
+  .show > &.dropdown-toggle {
+    color: $color;
+    //background-color: $color;
+    //border-color: $color;
+  }
+}
 // Button sizes
 @mixin button-size($padding-y, $padding-x, $font-size, $border-radius) {
   padding: $padding-y $padding-x;
