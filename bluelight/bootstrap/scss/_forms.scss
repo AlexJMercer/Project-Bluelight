@@ -13,19 +13,20 @@
   font-size: $font-size-base;
   line-height: $input-btn-line-height;
   color: $input-color;
-  background-color: $input-bg;
+  //background-color: $input-bg;
   //position: relative;
   // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214.
-  background-image: -webkit-linear-gradient($blue, $blue), -webkit-linear-gradient(#D2D2D2, #D2D2D2);
-  background-image: -o-linear-gradient($blue, $blue), -o-linear-gradient(#D2D2D2, #D2D2D2);
-  background-image: linear-gradient($blue, $blue), linear-gradient(#D2D2D2, #D2D2D2);
+  //background-image: -webkit-linear-gradient($blue, $blue), -webkit-linear-gradient(#D2D2D2, #D2D2D2);
+  //background-image: -o-linear-gradient($blue, $blue), -o-linear-gradient(#D2D2D2, #D2D2D2);
+  //background-image: linear-gradient($blue, $blue), linear-gradient(#D2D2D2, #D2D2D2);
+  @include input-background-image($blue);
   background-size: 0 2px, 100% 1px;
   background-repeat: no-repeat;
   background-position: center bottom, center calc(100% - 1px);
   background-color: transparent;
-
   background-clip: padding-box;
   border: $input-btn-border-width solid $input-border-color;
+
 
   // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
   @if $enable-rounded {
@@ -68,13 +69,17 @@
   }
 
   &-placeholder {
-  position: absolute;
-  top: -7px;
-  margin: 1rem 0 0 0;
-  pointer-events: none;
-  color: #aaa;
-  transition: all 200ms;
-}
+    position: absolute;
+    top: -7px;
+    margin: 1rem 0 0 0;
+    pointer-events: none;
+    color: $input-color;
+    transition: all 200ms;
+
+    &.light {
+      color: $white;
+    }
+ }
 
   &:focus + &-placeholder {
     color: inherit;
@@ -214,7 +219,6 @@ select.form-control-lg {
 .form-group {
   margin-bottom: $form-group-margin-bottom;
   position: relative;
-  padding: 0.5rem;
 }
 
 .form-text {
@@ -270,6 +274,134 @@ select.form-control-lg {
   &:only-child {
     position: static;
   }
+
+  /*.checkbox {
+    width: 1.25rem;
+    height: 1.25rem;
+
+    label {
+      cursor: pointer;
+      padding-left: 0; // Reset for Bootstrap rule
+      color: $input-color;
+      //@include mdb-label-color-toggle-focus();
+    }
+
+    // Hide native checkbox
+    input[type=checkbox] {
+      opacity: 0;
+      position: absolute;
+      margin: 0;
+      z-index: -1;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      left: 0;
+      pointer-events: none;
+    }
+
+    &.checkbox-material {
+      vertical-align: middle;
+      position: relative;
+      //top: 1px;
+      bottom: 3px;
+      padding-right: 5px;
+      display: inline-block;
+
+      &:before {
+        display: block;
+        position: absolute;
+        left: 0;
+        content: "";
+        background-color: rgba(0,0,0,.84);
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 100%;
+        z-index: 1;
+        opacity: 0;
+        margin: 0;
+        top: 0;
+        @include transform-scale3d(unquote('2.3,2.3,1'));
+     }
+
+     .check {
+         position: relative;
+         display: inline-block;
+         width: 1.25rem;
+         height: 1.25rem;
+         border: 1px solid $dark;
+         overflow: hidden;
+         z-index: 1;
+         border-radius: $border-radius;
+       }
+
+       .check:before {
+         position: absolute;
+         content: "";
+         transform: rotate(45deg);
+         display: block;
+         margin-top: -3px;
+         margin-left: 7px;
+         width: 0;
+         height: 0;
+         background: red;
+         box-shadow:
+           0 0 0 0,
+           0 0 0 0,
+           0 0 0 0,
+           0 0 0 0,
+           0 0 0 0,
+           0 0 0 0,
+           0 0 0 0 inset;
+         @include animation(checkbox-off $checkbox-animation-check forwards);
+       }
+    }
+
+    input[type=checkbox] {
+
+      &:focus + .checkbox-material .check:after {
+        opacity: 0.2;
+      }
+
+      &:checked {
+
+        & + .checkbox-material .check {
+          background: $checkbox-checked-color;
+        }
+
+        & + .checkbox-material .check:before {
+          color: #FFFFFF;
+          box-shadow: 0 0 0 10px,
+            10px -10px 0 10px,
+          32px 0 0 20px,
+          0px 32px 0 20px,
+          -5px 5px 0 10px,
+            20px -12px 0 11px;
+          @include animation(checkbox-on $checkbox-animation-check forwards);
+        }
+
+        & + .checkbox-material:before {
+          @include animation(rippleOn $checkbox-animation-ripple);
+        }
+
+        & + .checkbox-material .check:after {
+          //background-color: $brand-success; // FIXME: seems like tho wrong color, test and make sure it can be removed
+          @include animation(rippleOn $checkbox-animation-ripple forwards);
+        }
+      }
+
+      &:not(:checked) {
+        & + .checkbox-material:before {
+          @include animation(rippleOff $checkbox-animation-ripple);
+        }
+
+        & + .checkbox-material .check:after {
+          @include animation(rippleOff $checkbox-animation-ripple); // Ripple effect on uncheck
+
+        }
+      }
+    }
+
+  }*/
 }
 
 // Radios and checkboxes on same line

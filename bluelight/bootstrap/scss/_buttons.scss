@@ -16,16 +16,13 @@
   border: $input-btn-border-width solid transparent;
   @include button-size($input-btn-padding-y, $input-btn-padding-x, $font-size-base, $input-btn-line-height, $btn-border-radius);
   @include transition($btn-transition);
+  //@include shadow-4dp();
 
-
-  &:not(.btn-outline-*){
-    @include shadow-4dp();
-  }
-  /*&.btn-raised{
+  &.btn-raised{
     &:not(.btn-link){
         @include shadow-4dp();
     }
-  }*/
+  }
 
   &.btn-rounded{
     border-radius: $btn-rounded-border;
@@ -81,10 +78,9 @@ fieldset[disabled] a.btn {
 
 @each $color, $value in $theme-colors {
   .btn-outline-#{$color} {
-    @include button-outline-variant($value, #fff);
+    @include button-outline-variant($value);
   }
 }
-
 
 //
 // Link buttons
@@ -94,7 +90,6 @@ fieldset[disabled] a.btn {
 .btn-link {
   font-weight: $btn-font-weight;
   color: $dark;
-  border-radius: 0;
 
   &,
   &:active,
@@ -161,5 +156,25 @@ input[type="reset"],
 input[type="button"] {
   &.btn-block {
     width: 100%;
+  }
+}
+
+.btn-gradient-peach {
+  @include button-gradient-variant($white, $gradient-peach);
+}
+.btn-gradient-aqua {
+  @include button-gradient-variant($white, $gradient-aqua);
+}
+.btn-gradient-purple {
+  @include button-gradient-variant($white, $gradient-purple);
+}
+.btn-gradient-blue {
+  @include button-gradient-variant($white, $gradient-blue);
+}
+
+
+@each $color, $value in $theme-colors {
+  .btn-outline-v2-#{$color} {
+    @include button-outline-v2-variant($value);
   }
 }

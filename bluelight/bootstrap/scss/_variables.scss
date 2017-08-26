@@ -42,13 +42,11 @@
 // Carousel
 // Close
 // Code
-
+@import "custom";
 
 //
 // Color system
 //
-//@import "custom";
-@import "colors";
 
 $white:  #fff !default;
 $gray-100: #f8f9fa !default;
@@ -74,17 +72,16 @@ $grays: (
   900: $gray-900
 ) !default;
 
-$blue:    $brand-light-blue;
-$indigo:  $brand-indigo;
-$purple:  $brand-purple;
-$pink:    $brand-pink;
-$red:     $brand-red;
-$orange:  $brand-orange;
-$yellow:  $brand-yellow;
-$green:   $brand-green;
-$teal:    $brand-teal;
-$cyan:    $brand-cyan;
-$dark:    $brand-soft-black;
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
 
 $colors: (
   blue: $blue,
@@ -99,20 +96,19 @@ $colors: (
   cyan: $cyan,
   white: $white,
   gray: $gray-600,
-  gray-dark: $gray-800,
-  dark: $dark
-);
+  gray-dark: $gray-800
+) !default;
 
 $theme-colors: (
-  primary: $teal,
+  primary: $blue,
   secondary: $gray-600,
   success: $green,
   info: $cyan,
   warning: $yellow,
   danger: $red,
   light: $gray-100,
-  dark: $dark
-);
+  dark: $gray-800
+) !default;
 
 // Set a specific jump point for requesting color jumps
 $theme-color-interval: 8% !default;
@@ -217,9 +213,9 @@ $line-height-sm:         1.5 !default;
 
 $border-width: 1px !default;
 
-$border-radius:          0;
-$border-radius-lg:       0;
-$border-radius-sm:       0;
+$border-radius:          .25rem !default;
+$border-radius-lg:       .3rem !default;
+$border-radius-sm:       .2rem !default;
 
 $component-active-color: $white !default;
 $component-active-bg:    theme-color("primary") !default;
@@ -235,7 +231,7 @@ $transition-collapse:    height .35s ease !default;
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif !default;
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:       $font-family-sans-serif !default;
 
@@ -245,7 +241,6 @@ $font-size-sm:   .875rem !default;
 
 $font-weight-normal: normal !default;
 $font-weight-bold: bold !default;
-$font-weight-custom: 500;
 
 $font-weight-base: $font-weight-normal !default;
 $line-height-base: 1.5 !default;
@@ -328,19 +323,19 @@ $table-inverse-color:           $body-bg !default;
 //
 // For each of Bootstrap's buttons, define text, background and border color.
 
-$input-btn-padding-y:       .75rem;
-$input-btn-padding-x:       1.875rem;
+$input-btn-padding-y:       .5rem !default;
+$input-btn-padding-x:       .75rem !default;
 $input-btn-line-height:     1.25 !default;
 
-$input-btn-padding-y-sm:    0.3125rem;
-$input-btn-padding-x-sm:    1.25rem;
+$input-btn-padding-y-sm:    .25rem !default;
+$input-btn-padding-x-sm:    .5rem !default;
 $input-btn-line-height-sm:  1.5 !default;
 
-$input-btn-padding-y-lg:    1.125rem;
-$input-btn-padding-x-lg:    2.375rem;
+$input-btn-padding-y-lg:    .5rem !default;
+$input-btn-padding-x-lg:    1rem !default;
 $input-btn-line-height-lg:  1.5 !default;
 
-$btn-font-weight:                $font-weight-custom;
+$btn-font-weight:                $font-weight-normal !default;
 $btn-box-shadow:                 inset 0 1px 0 rgba($white,.15), 0 1px 1px rgba($black,.075) !default;
 $btn-focus-box-shadow:           0 0 0 3px rgba(theme-color("primary"), .25) !default;
 $btn-active-box-shadow:          inset 0 3px 5px rgba($black,.125) !default;
@@ -354,8 +349,6 @@ $btn-border-radius:              $border-radius !default;
 $btn-border-radius-lg:           $border-radius-lg !default;
 $btn-border-radius-sm:           $border-radius-sm !default;
 
-$btn-rounded-border:             10em;
-
 $btn-transition:                 all .15s ease-in-out !default;
 
 
@@ -366,7 +359,7 @@ $input-disabled-bg:              $gray-200 !default;
 
 $input-color:                    $gray-700 !default;
 $input-border-color:             rgba($black,.15) !default;
-$input-btn-border-width:         0; // For form controls and buttons
+$input-btn-border-width:         $border-width !default; // For form controls and buttons
 $input-box-shadow:               inset 0 1px 1px rgba($black,.075) !default;
 
 $input-border-radius:            $border-radius !default;
@@ -382,27 +375,16 @@ $input-placeholder-color:        $gray-600 !default;
 
 $input-height-border:           $input-btn-border-width * 2 !default;
 
-$input-height-inner:            ($font-size-base * $input-btn-line-height) + ($input-btn-padding-y * 2);
-$input-height:                  calc(#{$input-height-inner} + #{$input-height-border});
+$input-height-inner:            ($font-size-base * $input-btn-line-height) + ($input-btn-padding-y * 2) !default;
+$input-height:                  calc(#{$input-height-inner} + #{$input-height-border}) !default;
 
-$input-height-inner-sm:         ($font-size-sm * $input-btn-line-height-sm) + ($input-btn-padding-y-sm * 2);
-$input-height-sm:               calc(#{$input-height-inner-sm} + #{$input-height-border});
+$input-height-inner-sm:         ($font-size-sm * $input-btn-line-height-sm) + ($input-btn-padding-y-sm * 2) !default;
+$input-height-sm:               calc(#{$input-height-inner-sm} + #{$input-height-border}) !default;
 
-$input-height-inner-lg:         ($font-size-sm * $input-btn-line-height-lg) + ($input-btn-padding-y-lg * 2);
-$input-height-lg:               calc(#{$input-height-inner-lg} + #{$input-height-border});
+$input-height-inner-lg:         ($font-size-sm * $input-btn-line-height-lg) + ($input-btn-padding-y-lg * 2) !default;
+$input-height-lg:               calc(#{$input-height-inner-lg} + #{$input-height-border}) !default;
 
-$input-padding-x:                0;//.75rem;
-$input-padding-y:                .5rem;
-
-$input-padding-x-sm:             0;//.5rem;//8px
-$input-padding-y-sm:             .25rem;//4px
-
-$input-padding-x-lg:             0;//1.5rem;//24px
-$input-padding-y-lg:             .75rem;//12px
-
-$input-line-height:              1.25;
-
-$input-transition:              background 0s ease-out;
+$input-transition:               border-color ease-in-out .15s, box-shadow ease-in-out .15s !default;
 
 $form-text-margin-top:     .25rem !default;
 
@@ -737,13 +719,12 @@ $modal-transition:            transform .3s ease-out !default;
 //
 // Define alert colors, border radius, and padding.
 
-$alert-padding-y:             1.25rem;
-$alert-padding-x:             1.25rem;
+$alert-padding-y:             .75rem !default;
+$alert-padding-x:             1.25rem !default;
 $alert-margin-bottom:         1rem !default;
 $alert-border-radius:         $border-radius !default;
-$alert-link-font-weight:      $font-weight-custom;
+$alert-link-font-weight:      $font-weight-bold !default;
 $alert-border-width:          $border-width !default;
-$alert-font-size:             0.875rem;
 
 
 // Progress bars
@@ -838,7 +819,7 @@ $carousel-transition:           transform .6s ease !default;
 
 $close-font-size:             $font-size-base * 1.5 !default;
 $close-font-weight:           $font-weight-bold !default;
-$close-color:                 $white;
+$close-color:                 $black !default;
 $close-text-shadow:           0 1px 0 $white !default;
 
 // Code
@@ -847,15 +828,10 @@ $code-font-size:              90% !default;
 $code-padding-y:              .2rem !default;
 $code-padding-x:              .4rem !default;
 $code-color:                  #bd4147 !default;
-$code-bg:                     $gray-100 !default; //#272822
+$code-bg:                     $gray-100 !default;
 
 $kbd-color:                   $white !default;
 $kbd-bg:                      $gray-900 !default;
 
 $pre-color:                   $gray-900 !default;
 $pre-scrollable-max-height:   340px !default;
-
-
-$shadow-key-penumbra-opacity:     0.14 !default;
-$shadow-key-umbra-opacity:        0.2 !default;
-$shadow-ambient-shadow-opacity:   0.12 !default;

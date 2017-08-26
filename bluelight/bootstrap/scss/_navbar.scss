@@ -285,3 +285,24 @@
     color: $navbar-dark-color;
   }
 }
+
+.navbar-form {
+  margin: 0;
+  .form-group{
+    margin: 0;
+    padding: 0;
+  }
+
+  .form-group .form-control,
+  .form-control{
+    font-size: $font-size-base;
+    color: $white;
+    @include input-background-image($white);
+
+    &::placeholder {
+      color: $white;
+      // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+      opacity: 1;
+    }
+  }
+}

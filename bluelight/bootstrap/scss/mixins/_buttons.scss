@@ -4,13 +4,15 @@
 // and disabled options for all buttons
 
 @mixin button-variant($background, $active-background: lighten($background, 10%)) {
-  @include color-yiq($background);
+  //@include color-yiq($background);
   background-color: $background;
+  color: $white;
   //border-color: $border;
   @include box-shadow($btn-box-shadow);
 
   &:hover {
-    @include color-yiq($background);
+    //@include color-yiq($background);
+    //color: $white;
     background-color: $active-background;
     //border-color: $active-border;
   }
@@ -42,16 +44,13 @@
   }
 }
 
-@mixin button-outline-variant($color, $color-hover: #fff) {
+@mixin button-outline-variant($color) {
   color: $color;
   background-color: transparent;
   background-image: none;
-  //border-color: $color;
 
   @include hover {
     color: $color;
-    background-color: $color-hover;
-    //border-color: $color;
   }
 
   &:focus,
@@ -69,8 +68,6 @@
   &.active,
   .show > &.dropdown-toggle {
     color: $color;
-    //background-color: $color;
-    //border-color: $color;
   }
 }
 
@@ -80,4 +77,67 @@
   font-size: $font-size;
   line-height: $line-height;
   @include border-radius($border-radius);
+}
+
+@mixin button-gradient-variant($color, $background) {
+  $active-background: $background;
+  color: $color;
+  background: $background;
+
+  // Hover and focus styles are shared
+  @include hover {
+    color: $color;
+    background: $active-background;
+  }
+  &:focus,
+  &.focus {
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      //box-shadow: $btn-box-shadow, 0 0 0 2px;
+    } @else {
+      //box-shadow: 0 0 0 2px;
+    }
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    background: $background;
+  }
+
+  &:active,
+  &.active,
+  .show > &.dropdown-toggle {
+    color: $color;
+    background: $active-background;
+    @include box-shadow($btn-active-box-shadow);
+  }
+}
+
+@mixin button-outline-v2-variant($color) {
+  color: $color;
+  border: 2px solid $color;
+  background-color: transparent;
+  background-image: none;
+
+  @include hover {
+    color: $color;
+  }
+
+  &:focus,
+  &.focus {
+    //box-shadow: 0 0 0 3px rgba($color, .5);
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $color;
+    background-color: transparent;
+  }
+
+  &:active,
+  &.active,
+  .show > &.dropdown-toggle {
+    color: $color;
+  }
 }

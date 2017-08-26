@@ -4,7 +4,7 @@
   font-weight: $close-font-weight;
   line-height: 1;
   text-shadow: $close-text-shadow;
-  opacity: .9;
+  opacity: .75;
   @if (background-color == $gray-100) {
     color: $dark;
   }
@@ -13,9 +13,9 @@
   }
 
   @include hover-focus {
-    color: $close-color;
+    //color: $close-color;
     text-decoration: none;
-    opacity: .75;
+    opacity: .9;
   }
 }
 

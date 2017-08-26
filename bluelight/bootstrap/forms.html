@@ -6,6 +6,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
+    <!--Fonts and icons-->
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
     <link rel="stylesheet" href="ext/font-awesome.min.css">
     <link rel="stylesheet" href="dist/css/ripple.min.css">
@@ -75,22 +77,85 @@
 
       <form>
         <div class="form-group">
-            <div class="float-label">
+          <div class="checkbox checkbox-ripple">
+            <label class="input-checkbox checkbox-blue">
+              <input type="checkbox" id="checkbox-1" checked>
+              <span class="checkbox"></span>
+            </label>
+            <label for="checkbox-1" class="label">Checkbox</label>
+          </div><!-- @end Checkbox-1 -->
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input checkbox checkbox-material check" type="checkbox" value="">
+            Option one is this and that&mdash;be sure to include why it's great
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <label class="form-check-label">
+            <input class="form-check-input checkbox" type="checkbox" value="" disabled>
+            Option two is disabled
+          </label>
+        </div>
 
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            Option one is this and that&mdash;be sure to include why it's great
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            Option two can be something else and selecting it will deselect option one
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+            Option three is disabled
+          </label>
+        </div>
+        <div class="form-group">
+            <div class="float-label">
               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
               <label class="form-control-placeholder" for="exampleInputEmail1">Email address</label>
             </div>
-
-
         </div>
         <div class="form-group">
-
-
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-          <label class="go-bottom" for="formGroupExampleInput2">Another label</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" >
+          <label class="form-control-placeholder" for="formGroupExampleInput2">Three on a motorcycle don't pay...</label>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">@</span>
+          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <br>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+          <span class="input-group-addon" id="basic-addon2">@example.com</span>
+        </div>
+        <br>
+        <label for="basic-url">Your vanity URL</label>
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        <br>
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+          <span class="input-group-addon">.00</span>
+        </div>
+        <br>
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <span class="input-group-addon">0.00</span>
+          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
         </div>
       </form>
       <br>
+
       <!--div class="form-group row">
         <label for="example-text-input" class="col-2 col-form-label">Text</label>
         <div class="col-10">
@@ -181,6 +246,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="js/dist/ripple.min.js"></script>
+    <script src="ext/script_material.js"></script>
     <script type="text/javascript">
     $.ripple(".btn", {
               debug: false, // Turn Ripple.js logging on/off

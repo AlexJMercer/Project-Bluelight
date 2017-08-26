@@ -1,1 +1,131 @@
-$border-radius: 0;
+@import "colors";
+
+$white:  #fff ;
+$gray-100: #f8f9fa ;
+$gray-200: #e9ecef ;
+$gray-300: #dee2e6 ;
+$gray-400: #ced4da ;
+$gray-500: #adb5bd ;
+$gray-600: #868e96 ;
+$gray-700: #495057 ;
+$gray-800: #343a40 ;
+$gray-900: #212529 ;
+$black:  #000 ;
+
+$grays: (
+  100: $gray-100,
+  200: $gray-200,
+  300: $gray-300,
+  400: $gray-400,
+  500: $gray-500,
+  600: $gray-600,
+  700: $gray-700,
+  800: $gray-800,
+  900: $gray-900
+);
+
+$blue:    $brand-light-blue;
+$indigo:  $brand-indigo;
+$purple:  $brand-purple;
+$pink:    $brand-pink;
+$red:     $brand-red;
+$orange:  $brand-orange;
+$yellow:  $brand-yellow;
+$green:   $brand-green;
+$teal:    $brand-teal;
+$cyan:    $brand-cyan;
+$white:   $brand-white;
+$dark:    $brand-soft-black;
+
+$colors: (
+  blue: $blue,
+  indigo: $indigo,
+  purple: $purple,
+  pink: $pink,
+  red: $red,
+  orange: $orange,
+  yellow: $yellow,
+  green: $green,
+  teal: $teal,
+  cyan: $cyan,
+  white: $white,
+  gray: $gray-600,
+  gray-dark: $gray-800,
+  dark: $dark
+);
+
+$theme-colors: (
+  primary: $teal,
+  secondary: $gray-600,
+  success: $green,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red,
+  light: $gray-100,
+  dark: $dark
+);
+
+$gradient-peach:      linear-gradient(40deg, #FFD86F, #FC6262);
+$gradient-aqua:       linear-gradient(40deg, #3aa2ff, #1fffac);
+$gradient-purple:     linear-gradient(40deg, #ff88ce, #8f8bf7);
+$gradient-blue:       linear-gradient(40deg, #5ed1fc, #3647b3);
+
+$enable-rounded:            true;
+$enable-shadows:            true;
+$enable-gradients:          true;
+$enable-transitions:        true;
+$enable-hover-media-query:  true;
+$enable-grid-classes:       true;
+$enable-print-styles:       true;
+
+$border-radius:          0;
+$border-radius-lg:       0;
+$border-radius-sm:       0;
+
+$font-weight-custom: 500;
+
+$font-family-sans-serif: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+$navbar-padding-y:          0.75rem;
+$navbar-padding-x:          1rem;
+
+$input-btn-padding-y:       .75rem;
+$input-btn-padding-x:       1.875rem;
+
+$input-btn-padding-y-sm:    0.3125rem;
+$input-btn-padding-x-sm:    1.25rem;
+
+$input-btn-padding-y-lg:    1.125rem;
+$input-btn-padding-x-lg:    2.375rem;
+
+$btn-font-weight:                $font-weight-custom;
+$btn-rounded-border:             10em;
+
+$input-padding-x:                0;//.75rem;
+$input-padding-y:                .5rem;
+
+$input-padding-x-sm:             0;//.5rem;//8px
+$input-padding-y-sm:             .25rem;//4px
+
+$input-padding-x-lg:             0;//1.5rem;//24px
+$input-padding-y-lg:             .75rem;//12px
+
+$input-line-height:              1.25;
+
+$input-transition:              background 0s ease-out;
+
+$input-btn-border-width:         0; // For form controls and buttons
+$input-box-shadow:               none;
+
+$checkbox-animation-check: 0.3s;
+$checkbox-checked-color: $blue;
+$checkbox-transform-scale: 2.3, 2.3, 1;
+$checkbox-animation-ripple: 500ms;
+
+$alert-padding-y:             1.25rem;
+$alert-padding-x:             1.25rem;
+$alert-font-size:             0.875rem;
+
+$shadow-key-penumbra-opacity:     0.14;
+$shadow-key-umbra-opacity:        0.2;
+$shadow-ambient-shadow-opacity:   0.12;

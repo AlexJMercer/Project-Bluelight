@@ -19,10 +19,18 @@
   // as much space as possible, ensuring footers are aligned to the bottom.
   flex: 1 1 auto;
   padding: $card-spacer-x;
+
+  &-material {
+    margin-bottom: 2rem;
+  }
 }
 
 .card-title {
   margin-bottom: $card-spacer-y;
+
+  &-material{
+    margin-top: 1.875rem;
+  }
 }
 
 .card-subtitle {
@@ -67,11 +75,25 @@
   padding: $card-spacer-y $card-spacer-x;
   margin-bottom: 0; // Removes the default margin-bottom of <hN>
   background-color: $card-cap-bg;
-  border-bottom: $card-border-width solid $card-border-color;
+  //border-bottom: $card-border-width solid $card-border-color;
 
   &:first-child {
     @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
   }
+}
+
+.card-material{
+  padding: 50px 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: -40px;
+  background-color: $teal;
+  color: $white;
+  @include shadow-big-navbar();
+}
+
+.card-material-title{
+  margin-top: 1.875rem;
 }
 
 .card-footer {
